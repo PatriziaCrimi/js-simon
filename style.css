@@ -11,6 +11,18 @@ body {
 h1 {
   text-transform: uppercase;
   letter-spacing: 1px;
+  padding: 20px 0;
+}
+
+h2 {
+  padding: 10px;
+}
+
+span {
+  font-size: 30px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  padding: 40px;
 }
 
 #page-wrapper {
