@@ -1,0 +1,59 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+h1 {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+#page-wrapper {
+  width: 100%;
+  height: 100vh;
+}
+
+.container {
+  margin: 0 auto;
+}
+
+.row {
+  text-align: center;
+  padding: 40px 0;
+}
+
+
+/* ------------------- MEDIA QUERY ------------------- */
+
+/* Breakpoint Small 576px sm */
+@media screen and (min-width: 576px) {
+  .container {
+    max-width: 540px;
+  }
+}
+
+/* Breakpoint Medium 768px md */
+@media screen and (min-width: 768px) {
+  .container {
+    max-width: 720px;
+  }
+}
+
+/* Breakpoint Large 992px lg */
+@media screen and (min-width: 992px) {
+  .container {
+    max-width: 960px;
+  }
+}
+
+/* Breakpoint Extra Large 1200px lg */
+@media screen and (min-width: 1200px) {
+  .container {
+    max-width: 1140px;
+  }
+}
