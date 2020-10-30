@@ -66,20 +66,17 @@ function countdown() {
   var seconds_visualized = seconds_countdown - k;
   $('#countdown-section > span').text(seconds_visualized);
   k++;
-}
-
-// Stopping countdown on the screen
-function stopCountdown() {
-  clearInterval(countdown_stop);
-  $('#countdown-section > h2').remove();
-  $('#countdown-section > p').remove();
-  $('#countdown-section > span').remove();
-}
-
-// Removing numbers while stopping countdown on the screen
-function removeNumbers() {
   // Stopping countdown on the screen
-  stopCountdown();
+  if(k === seconds_countdown) {
+    clearInterval(countdown_stop);
+    $('#countdown-section > h2').remove();
+    $('#countdown-section > p').remove();
+    $('#countdown-section > span').remove();
+  }
+}
+
+// Removing numbers
+function removeNumbers() {
   // Removing numbers
   $('#random-numbers > h2').remove();
   $('#random-numbers > p').remove();
@@ -134,10 +131,10 @@ function guessingNumbers() {
     $('#results-section').append('<p>You could recollect all of the ' + numbers_quantity + ' numbers!</p>');
     } else {
     // Message about HOW MANY numbers he/she could recollect
-    console.log('The user recollected ' + guessed_numbers_array.length + ' numbers.');
-    alert('You recollected ' + guessed_numbers_array.length + ' numbers.');
+    console.log('The user recollected ' + guessed_numbers_array.length + ' number(s).');
+    alert('You recollected ' + guessed_numbers_array.length + ' number(s).');
     // Ouput in the DOM
-    $('#results-section').append('<p>You recollected ' + numbers_quantity + ' numbers.</p>');
+    $('#results-section').append('<p>You recollected ' + guessed_numbers_array.length + ' number(s).</p>');
     }
     // Message about WHICH numbers he/she recollected
     console.log('The array containing all of the guessed numbers is: ' , guessed_numbers_array);
