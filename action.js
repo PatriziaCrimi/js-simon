@@ -14,7 +14,7 @@ const min_number = 1;
 const max_number = 100;
 const numbers_quantity = 5;
 var random_numbers_array = [];
-const seconds_countdown = 30;
+const seconds_countdown = 10;
 var remove_timer = seconds_countdown * 1000;
 var input_timer = remove_timer + 1000;
 var user_numbers_array = [];
@@ -61,13 +61,13 @@ function getRndInteger(min, max) {
 };
 
 // Countdown of numbers on the screen
-var k = 0;
+var k = 1;
 function countdown() {
   var seconds_visualized = seconds_countdown - k;
   $('#countdown-section > span').text(seconds_visualized);
   k++;
   // Stopping countdown on the screen
-  if(k === seconds_countdown) {
+  if(k === seconds_countdown+1) {
     clearInterval(countdown_stop);
     $('#countdown-section > h2').remove();
     $('#countdown-section > p').remove();
