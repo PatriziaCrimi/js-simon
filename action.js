@@ -18,6 +18,7 @@ const remove_timer = 30000;
 const input_timer = 31000;
 var user_numbers_array = [];
 var guessed_numbers_array = [];
+var countdown_stop;
 var i = 0;
 
 $(document).ready(function() {
@@ -42,6 +43,8 @@ $(document).ready(function() {
   }
   // Starting the countdown to remove numbers from HTML
   setTimeout(removeNumbers, remove_timer);
+  // Showing the countdown on the screen
+  countdown_stop = setInterval(countdown, 1000);
   // Entering inputs from the user after the previous countdown has ended
   setTimeout(guessingNumbers, input_timer);
 });
@@ -54,12 +57,25 @@ function getRndInteger(min, max) {
   return Math.floor(Math.random() * (max - min + 1) ) + min;
 };
 
-// Removing numbers from HTML
+// Removing numbers from HTML & stopping countdown
 function removeNumbers() {
-  $('span').remove();
+  $('#random-numbers > span').remove();
+  clearInterval(countdown_stop);
 };
 
+// Countdown of numbers on the screen
+var k = 0;
+function countdown() {
 
+  var seconds = k + 1;
+  while (k < seconds) {
+    $('#countdown-section').append('<span>' + seconds + '</span>');
+    k++
+  }
+  // $('#countdown-section > span').remove();
+}
+
+// User's guesses about the numbers he/she can recollect and results
 function guessingNumbers() {
   // ***** Entering inputs from the user (the numbers he/she can remember) *****
   do {
@@ -104,7 +120,7 @@ function guessingNumbers() {
     }
     // Message about WHICH numbers he/she recollected
     console.log('The array containing all the guessed numbers is: ' , guessed_numbers_array);
-    alert('They are: ' + guessed_numbers_array);
+    alert('Number(s) recollected: ' + guessed_numbers_array);
   } else {
     // Message about NOT recollecting any number
     console.log('The user couldn\'t recollect any number.');
