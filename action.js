@@ -14,7 +14,7 @@ const min_number = 1;
 const max_number = 100;
 const numbers_quantity = 5;
 var random_numbers_array = [];
-const seconds_countdown = 10;
+const seconds_countdown = 30;
 var remove_timer = seconds_countdown * 1000;
 var input_timer = remove_timer + 1000;
 var user_numbers_array = [];
@@ -60,6 +60,14 @@ function getRndInteger(min, max) {
   return Math.floor(Math.random() * (max - min + 1) ) + min;
 };
 
+// Removing numbers
+function removeNumbers() {
+  // Removing numbers
+  $('#random-numbers > h2').remove();
+  $('#random-numbers > p').remove();
+  $('#random-numbers > span').remove();
+};
+
 // Countdown of numbers on the screen
 var k = 1;
 function countdown() {
@@ -74,14 +82,6 @@ function countdown() {
     $('#countdown-section > span').remove();
   }
 }
-
-// Removing numbers
-function removeNumbers() {
-  // Removing numbers
-  $('#random-numbers > h2').remove();
-  $('#random-numbers > p').remove();
-  $('#random-numbers > span').remove();
-};
 
 // User's guesses about the numbers he/she can recollect & results/output
 function guessingNumbers() {
